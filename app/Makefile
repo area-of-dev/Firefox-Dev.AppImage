@@ -46,4 +46,5 @@ init:
 	chmod +x $(PWD)/bin/appimagetool.AppImage
 
 clean:
+	rm -rf $(PWD)/*.AppImage
 	rm -rf $(PWD)/build
