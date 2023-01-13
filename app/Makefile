@@ -16,7 +16,7 @@ all: clean init
 	$(PWD)/bin/Apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
 	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 libbotan-2-12 \
 	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1 \
-	    libgtk-3-0 libwayland-cursor0
+	    libgtk-3-0 libdbus-glib-1-2 libwayland-cursor0
 
 	wget --output-document="$(PWD)/build/build.tar.bz2" "https://download.mozilla.org/?product=firefox-devedition-latest&os=linux64"
 	tar -jxvf $(PWD)/build/build.tar.bz2 -C $(PWD)/build
