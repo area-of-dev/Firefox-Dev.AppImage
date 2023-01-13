@@ -12,6 +12,7 @@
 FROM ubuntu:20.04
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV DEBIAN_FRONTEND=noninteractive 
 
 RUN apt-get -y update && apt-get -y install apt-utils
 RUN apt-get -y update && apt-get -y upgrade
