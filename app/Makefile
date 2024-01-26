@@ -13,7 +13,7 @@ PWD:=$(shell pwd)
 
 all: clean init
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir
-	$(PWD)/bin/Apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
+	$(PWD)/bin/apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
 	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 libbotan-2-12 \
 	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1 \
 	    libgtk-3-0 libdbus-glib-1-2 libwayland-cursor0
@@ -43,11 +43,11 @@ all: clean init
 init:
 	mkdir --parents $(PWD)/bin
 
-	wget https://apprepo.de/appimage/download/apprepo \
-		--output-document=$(PWD)/bin/Apprepo.AppImage
-	chmod +x $(PWD)/bin/Apprepo.AppImage
+	wget https://github.com/area-of-dev/apprepo.AppImage/releases/download/latest/apprepo.AppImage \
+		--output-document=$(PWD)/bin/apprepo.AppImage
+	chmod +x $(PWD)/bin/apprepo.AppImage
 
-	wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-x86_64.AppImage \
+	wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage \
 		--output-document=$(PWD)/bin/appimagetool.AppImage
 	chmod +x $(PWD)/bin/appimagetool.AppImage
 

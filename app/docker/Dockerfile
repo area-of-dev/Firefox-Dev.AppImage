@@ -9,16 +9,17 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-FROM ubuntu:20.04
-
-ARG TOKEN
-ENV TOKEN=${TOKEN}
+FROM ubuntu:23.10
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV DEBIAN_FRONTEND=noninteractive 
 
-RUN apt-get -y update && apt-get -y install apt-utils
-RUN apt-get -y update && apt-get -y upgrade
-RUN apt-get install -y kmod make gcc wget
+RUN apt-get -y update --fix-missing
+RUN apt-get -y install apt-utils
+RUN apt-get -y upgrade
+
+RUN apt-get install -y kmod make gcc wget bzip2
+RUN apt-get install -y rpm2cpio cpio
 RUN apt-get install -y fuse
 RUN apt-get install -y file
+
